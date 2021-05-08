@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Assignment 2: Naive Bayes and Text Classification}
+
+\author{Benedikt Riegel}
+
+\begin{document}
+	\maketitle
+	\section{Task 1: Simple Bayes (20 Points)}
+	\subsection{Task (10 Points)}
+	Define:
+	\begin{enumerate}[label=-]
+		\item $P(\text{Box x}) := \text{probability that Box x is chosen})$
+		\item $P(\text{Apple}) := \text{probability that an apple is chosen}$
+		\item $P(\text{Orange}) := \text{probability that an orange is chosen}$
+	\end{enumerate}
+	Given: $P(\text{Box 1}) = P(\text{Box 2})$
+	\begin{center}
+		\begin{tabular}{ |c|c|c| } 
+			\hline
+			& Apples & Oranges \\ 
+			\hline
+			Box 1 & 4 & 10 \\ 
+			\hline
+			Box 2 & 6 & 8 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	We assume $P(\text{Box 1}) + P(\text{Box 2}) = 1$.\\
+	$\implies P(\text{Apple}\mid\text{Box 1}) = 4/14 = 2/7$, $P(\text{Orange}\mid\text{Box 1}) = 10/14 = 5/7$,\\
+	$P(\text{Apple}\mid\text{Box 2}) = 6/14 = 3/7$ and $P(\text{Orange}\mid\text{Box 2}) = 8/14 = 4/7$.\\
+	$P(\text{Box 1}) = P(\text{Box 2}) = 1/2$.\\\\
+	What is the probability of choosing an apple?\\
+	\begin{eqnarray*}
+		P(\text{Apple}) &=& P(\text{Apple, Box 1}) + P(\text{Apple, Box 2})\\
+		&=& P(\text{Box 1}) \cdot P(\text{Apple}\mid\text{Box 1}) + P(\text{Box 2}) \cdot P(\text{Apple}\mid\text{Box 2})\\
+		&=& \frac{1}{2} \cdot \frac{2}{7} + \frac{1}{2} \cdot \frac{3}{7}\\
+		&=& \frac{5}{14}
+	\end{eqnarray*}
+	If an apple is chosen, what is the probability that it came from box 1?\\
+	\begin{eqnarray*}
+		P(\text{Box 1} \mid \text{Apple}) &=& \frac{P(\text{Box 1, Apple})}{P(\text{Apple})}\\
+		&=& \frac{P(\text{Apple, Box 1})}{P(\text{Apple})}\\
+		&=& \frac{\frac{1}{2} \cdot \frac{2}{7}}{\frac{5}{14}}\\
+		&=& \frac{1 \cdot 2 \cdot 14}{2 \cdot 7 \cdot 5}\\
+		&=& \frac{28}{70}\\
+		&=& \frac{2}{5}
+	\end{eqnarray*}
+
+	\subsection{Task (10 Points)}
+	Given: Given are two M\&M bags from 1994 and 1996 and the probabilities of finding a specific colour in the two different bags. The probabilities are as follows:
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c| }
+			\hline
+			& Yellow & Green & Other \\ 
+			\hline
+			1994 & 0.3 & 0.2 & 0.5 \\ 
+			\hline
+			1996 & 0.16 & 0.24 & 0.6 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	Now scenario $A := $"one M\&M of each bag is taken out, one is green and the other is yellow." occurs.\\
+	What is the probability of scenario $B := $ "the yellow M\&M came from the 1994 bag"?
+	So it's asked for the probability 
+	\begin{equation*}
+		P(B \mid A) = \frac{P(B, A)}{P(A)}
+	\end{equation*}
+	First take a look at $P(B, A)$, notice that $A$ and $B$ implies that not only is the 1994 M\&M yellow, but the 1996 M\&M is green.
+	\begin{eqnarray*}
+		P(B, A) &=& P(\text{1994 Bag was picked}) * P(\text{yellow M\&M})\\
+		&&+ P(\text{1996 Bag was picked}) * P(\text{green M\&M})\\
+		&=& 0.5 * 0.3 + 0.5 * 0.24\\
+		&=& 0.27
+	\end{eqnarray*}
+	Notice that because of statement $A$ we have to take one out of each bag, so we have to treat the probabilities for each bag to be $0.5$.
+	Now $P(A)$ can also be computed by summing up all the allowed combinations of M\&M that fulfil scenario $A$.\\
+	\begin{enumerate}[label=A.\arabic*]
+		\item 1994 M\&M is yellow $\implies$ 1996 M\&M is green.
+		\item 1996 M\&M is green $\implies$ 1996 M\&M is yellow.
+	\end{enumerate}
+	This means there are only scenario $A.1$ and $A.2$ that fulfil $A$.
+	\begin{eqnarray*}
+		\left[A.1 \Leftrightarrow B \text{ and } A\right] \implies \left[P(A.1) = P(B, A) = 0.27\right]
+	\end{eqnarray*}
+	Analogously $P(A.2)$ can be computed to be
+	\begin{eqnarray*}
+		P(A.2) &=& 0.5 * 0.2 + 0.5 * 0.16\\
+		&=& 0.18
+	\end{eqnarray*}
+	resulting in
+	\begin{eqnarray*}
+		P(A) &=& P(A.1) + P(A.2)\\
+		&=& 0.27 + 0.18\\
+		&=& 0.45
+	\end{eqnarray*}
+	Therefore the answer to our previous question is
+	\begin{eqnarray*}
+		P(B \mid A) &=& \frac{P(B, A)}{P(A)}\\
+		&=& \frac{0.27}{0.45}\\
+		&=& 0.6
+	\end{eqnarray*}
+\end{document}
