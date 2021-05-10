@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.27)  8 MAY 2021 09:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.27)  10 MAY 2021 15:57
 entering extended mode
 **./Answers.tex
 (Answers.tex
@@ -156,7 +156,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--81
 
  []
 
-[2] [3] (Answers.aux) ) 
+[2]
+Overfull \hbox (4.82451pt too wide) in paragraph at lines 108--108
+[]\OT1/cmr/bx/n/14.4 Task 3: kNN for Text Clas-si-fi-ca-tion (30 Points) 
+ []
+
+[3] (Answers.aux) ) 
 Here is how much of TeX's memory you used:
  1881 strings out of 479334
  26160 string characters out of 2855659
@@ -165,16 +170,16 @@ Here is how much of TeX's memory you used:
  410985 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,9n,74p,225b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Benedikt/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Benedikt/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Benedikt/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Benedikt/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
-Benedikt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb
-><C:/Users/Benedikt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><C:/Users/Benedikt/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb>
-Output written on Answers.pdf (3 pages, 89419 bytes).
+<C:/Users/Benedikt/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><C:/Users/Benedikt/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Benedikt/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Benedikt/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Bene
+dikt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
+/Users/Benedikt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r7.pfb><C:/Users/Benedikt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb>
+Output written on Answers.pdf (3 pages, 94014 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

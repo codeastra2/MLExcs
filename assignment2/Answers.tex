@@ -103,4 +103,16 @@
 		&=& \frac{0.27}{0.45}\\
 		&=& 0.6
 	\end{eqnarray*}
+\section{Task 2: Fake News Classification with Naive Bayes (20 Points)}
+	This task was answered in the jupyter-notebook.
+\section{Task 3: kNN for Text Classification (30 Points)}
+	\subsection{How do you represent the text?}
+	These are just some thoughts and can be deleted.\\
+	We could add one dimension for each term, which represents the frequency of this specific term. E.g.
+	\begin{enumerate}[label=-]
+		\item point $[0, 0]$ represents a text with $0$ 'hi's and $0$ 'bye's (empty text []).
+		\item point $[2, 1]$ represents a text with $2$ 'hi's and $1$ 'bye' (['hi', 'hi', 'bye'], ['hi', 'bye', 'hi'], ['bye', 'hi', 'hi']).
+	\end{enumerate}
+	We should use a min-max scaling on this data.
+	\subsection{What distance function do you use?}
 \end{document}
