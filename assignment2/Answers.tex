@@ -2,6 +2,7 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{hyperref}
 
 \title{Assignment 2: Naive Bayes and Text Classification}
 
@@ -19,13 +20,13 @@
 	\end{enumerate}
 	Given: $P(\text{Box 1}) = P(\text{Box 2})$
 	\begin{center}
-		\begin{tabular}{ |c|c|c| } 
+		\begin{tabular}{ |c|c|c| }
 			\hline
-			& Apples & Oranges \\ 
+			& Apples & Oranges \\
 			\hline
-			Box 1 & 4 & 10 \\ 
+			Box 1 & 4 & 10 \\
 			\hline
-			Box 2 & 6 & 8 \\ 
+			Box 2 & 6 & 8 \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -55,17 +56,17 @@
 	\begin{center}
 		\begin{tabular}{ |c|c|c|c| }
 			\hline
-			& Yellow & Green & Other \\ 
+			& Yellow & Green & Other \\
 			\hline
-			1994 & 0.3 & 0.2 & 0.5 \\ 
+			1994 & 0.3 & 0.2 & 0.5 \\
 			\hline
-			1996 & 0.16 & 0.24 & 0.6 \\ 
+			1996 & 0.16 & 0.24 & 0.6 \\
 			\hline
 		\end{tabular}
 	\end{center}
 	Now scenario $A := $"one M\&M of each bag is taken out, one is green and the other is yellow." occurs.\\
 	What is the probability of scenario $B := $ "the yellow M\&M came from the 1994 bag"?
-	So it's asked for the probability 
+	So it's asked for the probability
 	\begin{equation*}
 		P(B \mid A) = \frac{P(B, A)}{P(A)}
 	\end{equation*}
@@ -115,4 +116,16 @@
 	\end{enumerate}
 	We should use a min-max scaling on this data.
 	\subsection{What distance function do you use?}
+\section{Task 4: Task 4: kNN in High-Dimensional Feature Spaces (30 Points)}
+    \subsection{ Research and discuss why kNN might fail for high dimensional feature spaces.}
+    With higher dimensions, the distance metric becomes meaningless in KNN as all points tend to be equidistant from each other as the dimensions tend to larger and larger values, so because of this the k set of points are equally distant to the test point as compared to other points hence the label assigned to the test points is faulty and the algorithm fails.
+    \subsection{ Identify and explain one approach for solving or circumventing this problem.} As suggested in \cite{cnnknn} we can have an integrated model such as a CNN-KNN which first extracts only the relevant features of the data and reduces the dimensionality of the same, so this will ensure the KNN performs well on the lower dimension data.  Or as per this  \href{https://qr.ae/pGnZPO}{answer}, we can change the distance metric to something spherical based on cosine distance.
+
+
+\begin{thebibliography}{9}
+\bibitem{cnnknn}
+A. D. Bhat, H. R. Acharya and S. H.R., "A Novel Solution to the Curse of Dimensionality in Using KNNs for Image Classification," 2019 2nd International Conference on Intelligent Autonomous Systems (ICoIAS), 2019, pp. 32-36, doi: 10.1109/ICoIAS.2019.00012.
+
+
+
 \end{document}
