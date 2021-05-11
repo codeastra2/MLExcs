@@ -6,7 +6,10 @@
 
 \title{Assignment 2: Naive Bayes and Text Classification}
 
-\author{Benedikt Riegel}
+\author{Benedikt Riegel, 3568633
+    \and Fozan Gill, 3437081
+    \and Srinivas Kumar R, 3513675}
+
 
 \begin{document}
 	\maketitle
@@ -108,7 +111,6 @@
 	This task was answered in the jupyter-notebook.
 \section{Task 3: kNN for Text Classification (30 Points)}
 	\subsection{How do you represent the text?}
-	These are just some thoughts and can be deleted.\\
 	We could add one dimension for each term, which represents the frequency of this specific term. E.g.
 	\begin{enumerate}[label=-]
 		\item point $[0, 0]$ represents a text with $0$ 'hi's and $0$ 'bye's (empty text []).
@@ -116,6 +118,15 @@
 	\end{enumerate}
 	We should use a min-max scaling on this data.
 	\subsection{What distance function do you use?}
+	Specifically, four different distance functions, which are Euclidean distance, cosine, similarity measure, Minkowsky, correlation, and Chi square, are used in the kNN classifier.
+        The distance function that is used by us as follows:
+        Euclidean dist. (p,q) :
+        \\
+        $\dis d(\mathbf{p},\mathbf{q}) = \sqrt[2]{\sum_{i=1}^{n} (p_i - q_i)^{2}}$
+        \\
+        Advantage of Euclidean distance is that it measures the regular distance between two points in space. For this reason, it is widely used in the applications where the distance between data points are needed to be calculated to measure similarities.
+    \subsection{What decision rule do you use?}
+    We can use K-nearest neighbor for text classification. BKNN requires much less CPU time than KNN, without loss of classification performance.
 \section{Task 4: Task 4: kNN in High-Dimensional Feature Spaces (30 Points)}
     \subsection{ Research and discuss why kNN might fail for high dimensional feature spaces.}
     With higher dimensions, the distance metric becomes meaningless in KNN as all points tend to be equidistant from each other as the dimensions tend to larger and larger values, so because of this the k set of points are equally distant to the test point as compared to other points hence the label assigned to the test points is faulty and the algorithm fails.
